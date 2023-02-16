@@ -44,26 +44,25 @@
      <div>
 <label>Name</label>
 <br/>
-          <input type="text" placeholder="Enter your name" id="name" autocomplete="off" required>
+          <input type="text"  id="name" autocomplete="off" required>
       </div>
 <br/>
 <label>Email</label>
 <br/>
 <div>  
- <input type="email" placeholder="Enter your email" 
- id="email" autocomplete="off" required>
+ <input type="email"  id="email" autocomplete="off" required>
     </div>
 <br/>
 <label>Subject</label>
 <br/>
 <div>    
-<input type="text" placeholder="Enter your Subject" autocomplete="off" id="subject">
+<input type="text"  autocomplete="off" id="subject">
 </div>
 <br/>
 <label>Comments</label>
 <br/>
 <div>
-<textarea id="message" placeholder="Enter your comments" cols="70" rows="8"></textarea>
+<textarea id="message"  cols="70" rows="8"></textarea>
 </div>
 <br/>
 <div>
@@ -73,9 +72,8 @@
       </form>
       </div>
      </div>
-       </div>
-        </div>
-       
+     </div>
+     </div>       
     </div>       
   </div>          
               
@@ -102,7 +100,7 @@ Email.send({
 }).then(
   message => alert(message)
 );
-document.getElementById('name').value="";
+  document.getElementById('name').value="";
   document.getElementById('email').value="";
   document.getElementById('subject').value="";
   document.getElementById('message').value="";
