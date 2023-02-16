@@ -65,7 +65,9 @@ Email.send({
     From : "admin@goguservices.com",
     Subject : "contact message",
     Body : body
-});
+}).then(
+  message => alert(message)
+);
 
 
 
@@ -74,4 +76,3 @@ Email.send({
 
 </body>
 </html>
- 
