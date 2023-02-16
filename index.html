@@ -13,11 +13,17 @@
          	
          }
       </script>
+<script>
+            function submitForm() {
+            document.getElementById("contactform").reset();
+           
+            }
+        </script>
    </head>
 <body>
   <div class="form">
     
-      <form method="POST">
+      <form method="POST" id="contactform">
      <div>
 <label>Name</label>
 <br/>
@@ -44,9 +50,7 @@
 </div>
 <br/>
 <div>
-          <button id="btn" >Submit</button>
-  </div>
-  <div>  
+          <button id="btn" onClick="submitForm()">Submit</button>
 <button id="Homebtn" value="www.goguservices.com" onClick="redirectToURL(this.id)" >Home</button>
    </div>    
       </form>
@@ -71,8 +75,6 @@ Email.send({
 }).then(
   message => alert(message)
 );
-
-
 
 })
 </script>
