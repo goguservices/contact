@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact Form</title>
    
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
 <script type="text/javascript">
          function redirectToURL(btnId){
          	if(btnId=="Homebtn")
@@ -16,94 +16,46 @@
 
    </head>
 <body>
-  <div class="container">
-        <div class=" text-center mt-5 ">
-
-            <h1 >Contact Form</h1>
-                
-            
-        </div>
- 
+  <div class="form">
     
-    <div class="row ">
-      <div class="col-lg-7 mx-auto">
-        <div class="card mt-2 mx-auto p-4 bg-light">
-            <div class="card-body bg-light">
-       
-            <div class = "container">
-                             <form id="contactform" role="form">
-
-            
-
-            <div class="controls">
-               <div class="col-md-12">
-  <button id="Homebtn" class="btn btn-success btn-send  pt-2 btn-block" value="www.goguservices.com" onClick="redirectToURL(this.id)" >Home</button>
-              </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="form_name">Firstname *</label>
-                            <input id="name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
-                            
-                        </div>
-                    </div>
-                    
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="form_email">Email *</label>
-                            <input id="email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
-                            
-                        </div>
-                    </div>
-                  <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="form_subject">Subject*</label>
-                            <input id="subject" type="text" name="subject" class="form-control" placeholder="Please enter subject *" required="required" data-error="subject is required.">
-                         </div>    
-                        </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="form_message">Message *</label>
-                            <textarea id="message" name="message" class="form-control" placeholder="Write your message here." rows="4" required="required" data-error="Please, leave us a message."></textarea
-                                >
-                            </div>
-
-                        </div>
-
-
-                    <div class="col-md-12">
-                        
-                        <button id="btn" type="submit" class="btn btn-success btn-send  pt-2 btn-block
-                            " value="submit" >Submit</button>
-                    
-                </div>
-          
-                </div>
-
-
-        </div>
-         </form>
-        </div>
-            </div>
-
-
+      <form method="POST" id="contactform">
+     <div>
+<label>Name</label>
+<br/>
+          <input type="text" placeholder="Enter your name" id="name" autocomplete="off" required>
+      </div>
+<br/>
+<label>Email</label>
+<br/>
+<div>  
+ <input type="email" placeholder="Enter your email" 
+ id="email" autocomplete="off" required>
     </div>
-        <!-- /.8 -->
-
+<br/>
+<label>Subject</label>
+<br/>
+<div>    
+<input type="text" placeholder="Enter your Subject" autocomplete="off" id="subject">
+</div>
+<br/>
+<label>Comments</label>
+<br/>
+<div>
+<textarea id="message" placeholder="Enter your comments" cols="150" rows="10"></textarea>
+</div>
+<br/>
+<div>
+          <button id="btn" type="submit" value="submit" >Submit</button>
+<button id="Homebtn" value="www.goguservices.com" onClick="redirectToURL(this.id)" >Home</button>
+   </div>    
+      </form>
     </div>
-    <!-- /.row-->
-
-</div>
-</div>
    <script src="https://smtpjs.com/v3/smtp.js">
 </script> 
 <script>
 var btn = document.getElementById('btn');
 var frm = document.getElementById('contactform');
-btn.addEventListener('click',function(e){
+frm.addEventListener("submit",function(e){
 e.preventDefault()
 var name = document.getElementById('name').value;
 var email = document.getElementById('email').value;
@@ -119,7 +71,10 @@ Email.send({
 }).then(
   message => alert(message)
 );
-name.value="";
+document.getElementById('name').value="";
+  document.getElementById('email').value="";
+  document.getElementById('subject').value="";
+  document.getElementById('message').value="";
 })
 </script>
 
