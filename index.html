@@ -13,12 +13,7 @@
          	
          }
       </script>
-<script>
-            function submitForm() {
-            document.getElementById("contactform").reset();
-           
-            }
-        </script>
+
    </head>
 <body>
   <div class="form">
@@ -50,7 +45,7 @@
 </div>
 <br/>
 <div>
-          <button id="btn" onClick="submitForm()">Submit</button>
+          <button id="btn" >Submit</button>
 <button id="Homebtn" value="www.goguservices.com" onClick="redirectToURL(this.id)" >Home</button>
    </div>    
       </form>
@@ -59,6 +54,7 @@
 </script> 
 <script>
 var btn = document.getElementById('btn');
+var frm = document.getElementById('contactform');
 btn.addEventListener('click',function(e){
 e.preventDefault()
 var name = document.getElementById('name').value;
@@ -76,7 +72,7 @@ Email.send({
   message => alert(message)
 );
 
-})
+frm.reset();})
 </script>
 
 </body>
