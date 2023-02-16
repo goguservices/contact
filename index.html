@@ -22,7 +22,7 @@
      <div>
 <label>Name</label>
 <br/>
-          <input type="text" placeholder="Enter your name" id="name" autocomplete="off" required="required">
+          <input type="text" placeholder="Enter your name" id="name" autocomplete="off" required>
       </div>
 <br/>
 <label>Email</label>
@@ -45,7 +45,7 @@
 </div>
 <br/>
 <div>
-          <button id="btn" >Submit</button>
+          <button id="btn" type="submit" value="submit" >Submit</button>
 <button id="Homebtn" value="www.goguservices.com" onClick="redirectToURL(this.id)" >Home</button>
    </div>    
       </form>
@@ -55,7 +55,7 @@
 <script>
 var btn = document.getElementById('btn');
 var frm = document.getElementById('contactform');
-btn.addEventListener('click',function(e){
+frm.addEventListener("submit",function(e){
 e.preventDefault()
 var name = document.getElementById('name').value;
 var email = document.getElementById('email').value;
